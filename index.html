@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DEEPAKWEBDEVELOPMENT</title>
   <link rel="stylesheet" href="style.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-  <form >
+  <form id="sumbit-form" >
     <div class="container">
       <center><h1 class="h1">APPLICATION FOR STATIC WEBSITE**</h1></center>
       <hr>
@@ -79,5 +80,40 @@
       
     </div>
   </form>
+    $("#submit-form").submit((e)=>{
+
+            e.preventDefault()
+
+            $.ajax({
+
+                url:"",
+
+                data:$("#submit-form").serialize(),
+
+                method:"post",
+
+                success:function (response){
+
+                    alert("Form submitted successfully")
+
+                    window.location.reload()
+
+                    //window.location.href="https://google.com"
+
+                },
+
+                error:function (err){
+
+                    alert("Something Error")
+
+    
+
+                }
+
+            })
+
+        })
+
+    </script>
 </body>
 </html>
